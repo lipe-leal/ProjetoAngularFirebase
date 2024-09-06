@@ -1,97 +1,25 @@
 <ion-content [fullscreen]="true">
 
-  <!-- MENU SUPERIOR SEGMENT -->
-  <ion-row class="ion-justify-content-center fundo2">
-      <ion-col size="12" size-lg="6">
-          <ion-segment value="usuarios" (ionChange)="trocar($event)">
-              <ion-segment-button value="usuarios">
-                  <ion-label>Usuários</ion-label>
-              </ion-segment-button>
-              <ion-segment-button value="treinos">
-                  <ion-label>Treinos</ion-label>
-              </ion-segment-button>
-          </ion-segment>
-      </ion-col>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="3">
+
+      <app-incrementer></app-incrementer>
+
+    </ion-col>
   </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="3">
 
-  <!-- VISUALIZAÇÃO USUÁRIOS -->
-   <ion-row class="ion-justify-content-center fundo2" *ngIf="this.segment == 'usuarios'">
-      <ion-col size="12" size-lg="5">
+      <app-incrementer></app-incrementer>
 
-          <ion-card>
-              
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="3">
 
+      <app-incrementer></app-incrementer>
 
-              <ng-container *ngFor="let usuario of this.usuarios">
-                <ion-item color="medium">
-                  <ion-label>
-                      <h1>{{ usuario.nome }}</h1>
-                      <h3>Idade: {{ usuario.idade }}</h3>
-                      <h3>Gênero: {{ usuario.genero }}</h3>
-                  </ion-label>
-                  
-                </ion-item>
-
-                <ion-accordion-group>
-                  <ion-accordion value="{{ rotina.dia }}" *ngFor="let rotina of usuario.rotinas">
-                        <ion-item slot="header" color="medium">
-                            <ion-label>{{ rotina.dia }}</ion-label>
-                        </ion-item>
-                      <div class="ion-padding" slot="content">
-                        <ng-container  *ngFor="let treino of rotina.treinos">
-                          <ion-item color="primary" class="borda">
-                            <ion-label>{{ treino }}</ion-label>
-                          </ion-item>
-                        </ng-container>
-                      </div>
-                  </ion-accordion>
-                </ion-accordion-group>
-              </ng-container>
-              
-              
-          </ion-card>
-
-
-      </ion-col>
-   </ion-row>
-
-  <!-- VISUALIZAÇÃO TREINOS -->
-  <ion-row class="ion-justify-content-center" *ngIf="this.segment == 'treinos'">
-      <ion-col size="12" size-lg="6">
-
-
-        <ng-container  *ngFor="let treino of this.treinos">
-          <!-- <ion-item color="primary" class="borda">
-            <ion-label>
-            <h1>{{ treino.nome }}</h1>
-            <h3>{{ treino.series }}</h3>
-            <ion-row class="ion-justify-content-center">
-              <ion-col size="12" size-lg="6">
-                <img src="{{ treino.foto }}" alt="">
-              </ion-col>
-              </ion-row>
-            </ion-label> 
-            </ion-item> -->
-            <ion-card>
-              <img alt="" src="{{ treino.foto }}" />
-              <ion-card-header>
-                <ion-card-title>{{ treino.nome }}</ion-card-title>
-                <ion-card-subtitle>{{ treino.series }}</ion-card-subtitle>
-              </ion-card-header>
-            
-              <ion-card-content>
-                Here's a small text description for the card content. Nothing more, nothing less.
-              </ion-card-content>
-            </ion-card>
-        
-          
-         
-        </ng-container>
-
-
-      </ion-col>
-   </ion-row>
-
-
+    </ion-col>
+  </ion-row>
 
 </ion-content>
