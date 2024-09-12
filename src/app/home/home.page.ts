@@ -13,10 +13,6 @@ import { ApiService } from '../shared/api.service';
 export class HomePage {
   
   
-  constructor(
-    public apiService: ApiService
-  ){
-    this.apiService.getPokemons();
-  }
+  constructor(){}
 
 }
